@@ -4,6 +4,10 @@ import { redirect } from "next/navigation";
 
 const main = async ({ params }: { params: { slug: string } }) => {
   console.log(params.slug);
+
+
+  // log that someone visted params.slug
+
   const record = await prisma.url.findUnique({
     where:{ 
       short: params.slug
