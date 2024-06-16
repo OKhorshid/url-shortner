@@ -1,8 +1,6 @@
-import Image from "next/image";
-import { Input } from "@/components/ui/input";
 import { prisma } from "@/lib/prismaClient";
 
-export default function Home() {
+export default async function Home() {
   async function createUrl(formData: FormData) {
     "use server";
     const rawFormData = {
@@ -16,9 +14,9 @@ export default function Home() {
         short: x,
       },
     });
-
     // ...
   }
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <form action={createUrl}>
